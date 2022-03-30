@@ -1,0 +1,115 @@
+:root {
+    --brown-background: rgba(135, 60, 15, 0.85);
+    --green-background: rgba(20, 140, 40, 0.85);
+    --dark-green: rgba(80, 80, 40);
+    --lighter-green: rgba(130, 140, 90);
+    --main-img-height: 80px;
+    --main-img-width: calc(var(--main-img-height) / 3 * 5);
+    --board-height: 35vw;
+    --board-width: calc(var(--board-height) / 3 * 5)
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--dark-green);
+    color: beige;
+}
+
+h1 {
+    padding-top: 30px;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin: 0;
+    visibility: hidden;
+}
+
+
+.main {
+    display: flex;
+    gap: 5vw;
+}
+
+.player-one, .player-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+    gap: 20px;
+}
+
+.main-img {
+    height: var(--main-img-height);
+    width: var(--main-img-width);
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.player-one .main-img {
+    background-color: var(--brown-background);
+}
+
+.player-two .main-img {
+    background-color: var(--green-background);
+}
+
+.board {
+    height: var(--board-height);
+    width: var(--board-width);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.box {
+    background-color: var(--lighter-green);
+    transition: all 0.2s;
+}
+
+.box:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.player-one-box {
+    background-image: url("./img/player-one.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--brown-background);
+}
+
+.player-two-box {
+    background-image: url("./img/player-two.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--green-background);
+}
+
+#reset-button {
+    position: fixed;
+    top: 40%;
+    z-index: 10;
+    height: 100px;
+    width: 300px;
+    background-color: var(--dark-green);
+    color: beige;
+    font-size: 40px;
+    border-radius: 10px;
+    transition: all 0.4s;
+    visibility: hidden;
+}
+
+#reset-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
